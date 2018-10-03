@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <p:menu toggleable="true">
+        <p:submenu label="Ingredientes">
+            <p:menuitem value="Alta" outcome="altaIngrediente" ajax="false" icon="ui-icon-disk" />
+            <p:menuitem value="Lista" outcome="listaIngrediente" ajax="false" icon="ui-icon-arrowrefresh-1-w"/>
+        </p:submenu>
+        <p:submenu label="Recetas">
+            <p:menuitem value="Alta" outcome="altaReceta" ajax="false" icon="ui-icon-home"/>
+            <p:menuitem value="Lista" outcome="listaReceta" ajax="false" icon="ui-icon-star"/>
+        </p:submenu>
+        <p:submenu label="Autores">
+            <p:menuitem value="Gestion" outcome="gestionAutores" ajax="false" icon="ui-icon-close"/>
+        </p:submenu>
+    </p:menu>
+</ui:composition>
