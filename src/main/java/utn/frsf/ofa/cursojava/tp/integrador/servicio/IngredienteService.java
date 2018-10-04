@@ -9,28 +9,29 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import utn.frsf.ofa.cursojava.tp.integrador.modelo.Autor;
+import utn.frsf.ofa.cursojava.tp.integrador.modelo.Ingrediente;
 
 /**
  *
  * @author mdominguez
  */
 @Stateless
-public class AutorService {
+public class IngredienteService {
+
     @PersistenceContext(unitName = "RECETAS_PU")
     private EntityManager em;
-    
-    public Autor guardar(Autor a){
-        if(a.getId()!=null && a.getId()>0) {
+
+    public Ingrediente guardar(Ingrediente a) {
+        if (a.getId() != null && a.getId() > 0) {
             return em.merge(a);
         }
         em.persist(a);
         em.flush();
         em.refresh(a);
         return a;
-    }  
-    
-    public List<Autor> listar(){
-        return em.createQuery("SELECT a FROM Autor a").getResultList();
+    }
+
+    public List<Ingrediente> listar() {
+        return em.createQuery("SELECT i FROM Ingrediente i").getResultList();
     }
 }

@@ -4,12 +4,23 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:p="http://primefaces.org/ui">
 
-    <h:form>
-        <h:panelGrid>
-            <p:panelGrid columns="2" layout="grid">
-                            <p:outputLabel for="extended" value="Extended Label:" />
-            <p:inputText id="extended" required="true" />
-            </p:panelGrid>
-        </h:panelGrid>
+    <h:form id="frmDatosAutores">
+        <div class="p-grid">
+            <div class="p-col-12" >
+                <h2>Formulario de ingreso de datos </h2>
+            </div>
+            <div class="p-col-4" >
+                <p:outputLabel for="nombreAutor" value="Nombre Autor:" />
+            </div>
+            <div class="p-col-4" >
+                <p:inputText id="nombreAutor" required="true" value="#{autorController.autorSeleccionado.nombre}" disabled="#{empty autorController.autorSeleccionado}"/>
+            </div>
+            <div class="p-col-3" >
+                <p:commandButton value="Guardar" action="#{autorController.guardar}" update="frmDatosAutores frmListaAutores" disabled="#{empty autorController.autorSeleccionado}"></p:commandButton>
+            </div>
+            <div class="p-col-3" >
+                <p:commandButton value="Nuevo" action="#{autorController.nuevo()}" update="frmDatosAutores" disabled="#{not empty autorController.autorSeleccionado}"></p:commandButton>
+            </div>                
+        </div>
     </h:form>
 </ui:composition>

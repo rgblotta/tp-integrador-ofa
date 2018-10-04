@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.frsf.ofa.cursojava.tp.integrador.recursos;
-
-import utn.frsf.ofa.cursojava.tp.integrador.modelo.*;
-import java.util.Date;
-import java.util.List;
+package utn.frsf.ofa.cursojava.tp.integrador.servicio;
 
 /**
  *
  * @author mdominguez
  */
-public class RecetaResource {
-    
+public class RecetaService {
     
 }

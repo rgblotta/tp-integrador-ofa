@@ -1,14 +1,35 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                template="./template01.xhtml">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                                template="./template01.xhtml">
+
 
     <ui:define name="top">
         <h1>Gestion de recetas</h1>
     </ui:define>
 
     <ui:define name="content">
-        <h1>ALTA INGREDIENTE</h1>
+        <h:form id="frmDatosIngredientes">
+        <div class="p-grid">
+            <div class="p-col-12" >
+                <h2>Formulario de ingreso de datos </h2>
+            </div>
+            <div class="p-col-4" >
+                <p:outputLabel for="nombreAutor" value="Nombre Autor:" />
+            </div>
+            <div class="p-col-4" >
+                <p:inputText id="nombreAutor" required="true" value="#{ingredienteController.ingredienteSeleccionado.nombre}" disabled="#{empty ingredienteController.ingredienteSeleccionado}"/>
+            </div>
+            <div class="p-col-3" >
+                <p:commandButton value="Guardar" action="#{ingredienteController.guardar}" ajax="false" disabled="#{empty ingredienteController.ingredienteSeleccionado}"></p:commandButton>
+            </div>
+            <div class="p-col-3" >
+                <p:commandButton value="Nuevo" action="#{ingredienteController.nuevo}" update="frmDatosIngredientes" disabled="#{not empty ingredienteController.ingredienteSeleccionado}"></p:commandButton>
+            </div>                
+        </div>
+    </h:form>
     </ui:define>
 
 </ui:composition>

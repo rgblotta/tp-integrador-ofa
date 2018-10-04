@@ -7,19 +7,20 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>TP INTEGRADOR</title>
+        <h:outputStylesheet library="css" name="primeflex.css"></h:outputStylesheet>
     </h:head>
 
     <h:body>
-
-
-        <div id="top" class="top">
-            <ui:insert name="top">Top</ui:insert>
-        </div>
-        <div>
-            <div id="left">
+        <div class="p-grid" style="border: 1px; border-color: #D20005">
+            <div id="top" class="p-col-12" style="border: 1px; border-color: #D20005">
+                <ui:insert name="top">Top</ui:insert>
+            </div>
+        </div>        
+        <div class="p-grid">
+            <div class="p-col-2" >
                 <ui:include src="menu.xhtml"> </ui:include>
             </div>
-            <div id="content" class="left_content">
+            <div class="p-col" >
                 <ui:insert name="content">Content</ui:insert>
             </div>
         </div>

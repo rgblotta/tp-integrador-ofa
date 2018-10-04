@@ -7,21 +7,40 @@ package utn.frsf.ofa.cursojava.tp.integrador.modelo;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author mdominguez
  */
+@Entity
 public class Receta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
     private String descripcion;
     private Double precio;
     private Integer duracionEstimada;
+    
+    @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
 
+    @ManyToMany
+    @JoinTable(name = "RECETA_INGREDIENTES",joinColumns = @JoinColumn(name = "ID_RECETA"),inverseJoinColumns = @JoinColumn(name="ID_INGREDIENTE"))
     private List<Ingrediente> ingredientes;
-    private TipoComida tipo;
+    
+    @ManyToOne
+    @JoinColumn(name = "ID_AUTOR")
     private Autor autor;
     
     public Integer getId() {
@@ -78,14 +97,6 @@ public class Receta {
 
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
-    }
-
-    public TipoComida getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoComida tipo) {
-        this.tipo = tipo;
     }
 
     public Autor getAutor() {
