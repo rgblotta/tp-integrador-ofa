@@ -5,6 +5,7 @@
  */
 package utn.frsf.ofa.cursojava.tp.integrador.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ import javax.persistence.TemporalType;
  * @author mdominguez
  */
 @Entity
-public class Receta {
+public class Receta implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -31,6 +32,7 @@ public class Receta {
     private String descripcion;
     private Double precio;
     private Integer duracionEstimada;
+
     
     @Temporal(TemporalType.DATE)
     private Date fechaCreacion;
@@ -107,5 +109,6 @@ public class Receta {
         this.autor = autor;
     }
     
+
     
 }

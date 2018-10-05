@@ -4,12 +4,18 @@
                 xmlns="http://www.w3.org/1999/xhtml"                
                 template="./template01.xhtml">
 
-    <ui:define name="top">
-        <h1>Gestion de recetas</h1>
-    </ui:define>
+    <ui:define name="top">Busqueda Avanzada de Recetas</ui:define>
+
 
     <ui:define name="content">
-        <h1>Elegir una opcion del menu</h1>
+        <div class="p-grid">
+            <div class="p-col-12" >
+                <ui:include src="recetas/formBusqueda.xhtml"> </ui:include>
+            </div>
+            <div class="p-col-12" >
+                <ui:include src="recetas/listaResultados.xhtml"> </ui:include>
+            </div>
+        </div>
     </ui:define>
 
 </ui:composition>

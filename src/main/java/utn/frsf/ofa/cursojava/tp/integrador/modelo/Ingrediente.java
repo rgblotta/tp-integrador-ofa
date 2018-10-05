@@ -5,6 +5,7 @@
  */
 package utn.frsf.ofa.cursojava.tp.integrador.modelo;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import javax.persistence.ManyToMany;
  * @author mdominguez
  */
 @Entity
-public class Ingrediente {
+public class Ingrediente implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Integer id;
@@ -57,6 +58,11 @@ public class Ingrediente {
 
     public void setUsadoEnRecetas(List<Receta> usadoEnRecetas) {
         this.usadoEnRecetas = usadoEnRecetas;
+    }
+
+    @Override
+    public String toString() {
+        return id+";"+descripcion+";"+costo;
     }
 
     
