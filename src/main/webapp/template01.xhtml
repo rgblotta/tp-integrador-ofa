@@ -8,22 +8,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>TP INTEGRADOR</title>
         <h:outputStylesheet library="css" name="primeflex.css"></h:outputStylesheet>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+        <h:outputScript library="js" name="bootstrap.min.js" target="body"></h:outputScript>
     </h:head>
 
     <h:body>
-        <div class="p-grid" style="border: 1px; border-color: #D20005">
-            <div id="top" class="p-col-12" style="border: 1px; border-color: #D20005">
-                <ui:insert name="top">Top</ui:insert>
-            </div>
-        </div>        
         <div class="p-grid">
-            <div class="p-col-2" >
-                <ui:include src="menu.xhtml"> </ui:include>
-            </div>
             <div class="p-col" >
-                <ui:insert name="content">Content</ui:insert>
+                <nav class="navbar navbar-light bg-light rounded ">
+                    <a class="navbar-brand" href="#">Aplicación de recetas</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <ui:insert name="top">App</ui:insert>
+                            </li>          
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
+            <div class="p-grid">
+                <div class="p-col-2" >
+                    <ui:include src="menu.xhtml"> </ui:include>
+                </div>
+                <div class="p-col" >
+                    <ui:insert name="content">Content</ui:insert>
+                </div>
+            </div>
+
     </h:body>
 
 </html>

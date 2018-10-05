@@ -17,15 +17,21 @@
                 <h2>Formulario de ingreso de datos </h2>
             </div>
             <div class="p-col-4" >
-                <p:outputLabel for="nombreAutor" value="Nombre Autor:" />
+                <p:outputLabel for="nombre" value="Nombre:" />
+            </div>
+            <div class="p-col-8" >
+                <p:inputText id="nombre" required="true" value="#{ingredienteController.ingredienteSeleccionado.descripcion}" disabled="#{empty ingredienteController.ingredienteSeleccionado}"/>
+            </div>
+              <div class="p-col-4" >
+                <p:outputLabel for="costo" value="Costo:" />
+            </div>
+            <div class="p-col-8" >
+                <p:inputText id="costo" required="true" value="#{ingredienteController.ingredienteSeleccionado.costo}" disabled="#{empty ingredienteController.ingredienteSeleccionado}"/>
             </div>
             <div class="p-col-4" >
-                <p:inputText id="nombreAutor" required="true" value="#{ingredienteController.ingredienteSeleccionado.nombre}" disabled="#{empty ingredienteController.ingredienteSeleccionado}"/>
-            </div>
-            <div class="p-col-3" >
                 <p:commandButton value="Guardar" action="#{ingredienteController.guardar}" ajax="false" disabled="#{empty ingredienteController.ingredienteSeleccionado}"></p:commandButton>
             </div>
-            <div class="p-col-3" >
+            <div class="p-col-4" >
                 <p:commandButton value="Nuevo" action="#{ingredienteController.nuevo}" update="frmDatosIngredientes" disabled="#{not empty ingredienteController.ingredienteSeleccionado}"></p:commandButton>
             </div>                
         </div>

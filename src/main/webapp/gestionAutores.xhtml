@@ -3,18 +3,15 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./template01.xhtml">
 
-    <ui:define name="top">
-        <h1>Aplicación de recetas</h1>
-        <h2>Gestión de autores</h2>
-    </ui:define>
+    <ui:define name="top">Gestión de autores</ui:define>
 
 
     <ui:define name="content">
         <div class="p-grid">
-            <div class="p-col-4" >
+            <div class="p-col-5" >
                 <ui:include src="autores/datosAutores.xhtml"> </ui:include>
             </div>
-            <div class="p-col-6" >
+            <div class="p-col-5" >
                 <ui:include src="autores/listaAutores.xhtml"> </ui:include>
             </div>
         </div>
