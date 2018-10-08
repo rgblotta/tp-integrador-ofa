@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>utn.frsf.ofa.curso-java</groupId>
-    <artifactId>tp-integrador</artifactId>
+    <artifactId>tp-final</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>tp-integrador</name>
+    <name>tp-final</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
