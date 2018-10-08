@@ -24,7 +24,8 @@ public class Autor implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
-    @OneToMany(mappedBy = "autor")
+    
+    // TODO Completar mapeo de relacion
     private List<Receta> recetasCreadas;
 
     public Integer getId() {

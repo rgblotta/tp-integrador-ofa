@@ -31,7 +31,6 @@ public class AutorController implements Serializable{
 
     @PostConstruct
     public void init(){
-        System.out.println(" POS CONTRUCT ");
         this.autorSeleccionado = null;
         this.listaAutores = servicioAutores.listar();
     }
@@ -60,7 +59,6 @@ public class AutorController implements Serializable{
     }
 
     public String nuevo(){
-        System.out.println(" POS NUEVO => => => =>=> =>=");
         this.autorSeleccionado = new Autor();
         return null;
     }    

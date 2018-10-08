@@ -30,7 +30,6 @@ public class IngredienteController implements Serializable{
 
     @PostConstruct
     public void init(){
-        System.out.println(" POS CONTRUCT ");
         this.ingredienteSeleccionado = null;
         this.listaIngredientes = servicioIngrediente.listar();
     }
@@ -54,14 +53,13 @@ public class IngredienteController implements Serializable{
     
     
     public String guardar(){
-        Ingrediente tmp = this.servicioIngrediente.guardar(ingredienteSeleccionado);
-        this.listaIngredientes.add(tmp);
-        this.ingredienteSeleccionado = null;
+        // TODO codificar el metodo guardar
+        // guardar el nuevo ingrediente
+        // setear en null el ingrediente seleccionado
         return "listaIngrediente";
     }
 
     public String nuevo(){
-        System.out.println(" POS NUEVO => => => =>=> =>=");
         this.ingredienteSeleccionado = new Ingrediente();
         return null;
     }    
