@@ -2,6 +2,7 @@ package utn.frsf.ofa.cursojava.tp.integrador.controladores;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -40,6 +41,15 @@ public class RecetaController implements Serializable {
     private List<Receta> listaRecetas;
 
     private DualListModel<Ingrediente> ingredientesDisponibles;
+    
+    //----Parámetros para Búsqueda Avanzada
+    private Double paramPrecioMin= new Double(0);
+    private Double paramPrecioMax= new Double(1000);
+    private Date paramFecMin= new Date("01/01/1900");
+    private Date paramFecMax= new Date("01/01/2020");
+   
+    private Ingrediente ingredienteSeleccionado;
+
     
     public Receta getRecetaSeleccionada() {
         return recetaSeleccionada;
@@ -103,5 +113,17 @@ public class RecetaController implements Serializable {
         this.autorSeleccionado = autorSeleccionado;
     }
 
-    
+    public Ingrediente getIngredienteSeleccionado() {
+        return ingredienteSeleccionado;
+    }
+
+    public void setIngredienteSeleccionado(Ingrediente ingredienteSeleccionado) {
+        this.ingredienteSeleccionado = ingredienteSeleccionado;
+    }
+
+    public String buscarRecetas() {
+        System.out.print("hola");
+        this.listaRecetas = this.recetaSrv.busquedaAvanzada(this.autorSeleccionado, this.ingredienteSeleccionado, paramPrecioMin, paramPrecioMax, paramFecMin, paramFecMax);
+        return "buscarReceta";
+    }  
 }

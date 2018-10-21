@@ -50,6 +50,12 @@ public class Receta implements Serializable{
     //@JoinColumn(name="ID_AUTOR")
     @JoinColumn(name="id_autor")
     private Autor autor;
+   
+    
+    //Mapeo con PEDIDOS
+    @ManyToMany(mappedBy="recetasPedidas")
+    private List<Pedido> PedidosDeReceta;
+    
     
     public Integer getId() {
         return id;
@@ -115,6 +121,12 @@ public class Receta implements Serializable{
         this.autor = autor;
     }
     
+    public List<Pedido> getPedidosDeReceta() {
+        return PedidosDeReceta;
+    }
 
+    public void setPedidosDeReceta(List<Pedido> PedidosDeReceta) {
+        this.PedidosDeReceta = PedidosDeReceta;
+    }
     
 }

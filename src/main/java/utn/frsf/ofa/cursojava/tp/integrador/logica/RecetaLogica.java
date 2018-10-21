@@ -52,7 +52,7 @@ public class RecetaLogica {
             precio += i.getCosto();
             System.out.println("Costo "+i.getCosto());
             System.out.println("PRECIO ACTUAL "+precio);
-            if(precio>r.getPrecio()) return false;
+       //     if(precio>r.getPrecio()) return false; @TODO ACA TIRA EL ERROR
         }
         return true;
     }
